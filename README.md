@@ -1,4 +1,4 @@
-# react-aws-s3-excel
+# React-aws-s3-excel
 
 # Amazon S3 Setup
 https://blog.devgenius.io/upload-files-to-amazon-s3-from-a-react-frontend-fbd8f0b26f5
