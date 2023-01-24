@@ -5,3 +5,9 @@ https://youtu.be/fXjU8jTjHB4
 
 # How to Upload Files With React
 https://codefrontend.com/file-upload-reactjs/
+
+# S3 Uploading Excel File and Downloading it via SignedURL
+https://stackoverflow.com/questions/60102124/s3-uploading-excel-file-and-downloading-it-via-signedurl
+
+# Amazon S3 Setup
+https://blog.devgenius.io/upload-files-to-amazon-s3-from-a-react-frontend-fbd8f0b26f5
