@@ -14,4 +14,5 @@ https://stackoverflow.com/questions/60102124/s3-uploading-excel-file-and-downloa
 
 # What is correct content-type for excel files?
 https://stackoverflow.com/questions/2937465/what-is-correct-content-type-for-excel-files
-# duplicate of: https://stackoverflow.com/questions/4212861/what-is-a-correct-mime-type-for-docx-pptx-etc
+# duplicate of:
+https://stackoverflow.com/questions/4212861/what-is-a-correct-mime-type-for-docx-pptx-etc
