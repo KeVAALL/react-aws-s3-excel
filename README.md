@@ -16,3 +16,14 @@ https://stackoverflow.com/questions/60102124/s3-uploading-excel-file-and-downloa
 https://stackoverflow.com/questions/2937465/what-is-correct-content-type-for-excel-files
 # duplicate of:
 https://stackoverflow.com/questions/4212861/what-is-a-correct-mime-type-for-docx-pptx-etc
+
+# s3 bucket policy gives the error "Policy has invalid resource"
+
+The "Policy has invalid resource" error message usually indicates that the S3 bucket resource specified in the policy is incorrect or does not exist.
+To resolve this issue, you can check and make sure that:
+
+The bucket name is spelled correctly in the policy. The bucket is in the same region as the policy. The bucket you are trying to reference is created and exists in your AWS account. Also, you can check the bucket policy using the AWS Policy Generator. This is a tool that helps you to create policies for different AWS services, including S3. It allows you to create policies by selecting different options, such as who can access the bucket and what actions they can perform.
+
+Additionally, you can check the syntax of your policy, it should be in JSON format and should be well-formed JSON. To validate JSON you can use any JSON validator tools available.
+
+Please make sure that you have the correct permissions to create and modify S3 policies and also that you are using the correct ARN (Amazon Resource Name) of the S3 bucket in the policy.
