@@ -39,3 +39,11 @@ By default, Git is set up to only merge branches that have a common ancestor. Th
 
 You can still merge these branches by using the --allow-unrelated-histories option, you can do this by running the command:
 "git pull origin main --allow-unrelated-histories"
+
+# ReferenceError: Buffer is not defined
+
+npm i buffer
+Then import it at the top of your file like so:
+
+window.Buffer = window.Buffer || require("buffer").Buffer;
+source: https://github.com/Fausto95/aws-s3/issues/88#issuecomment-1000511145
