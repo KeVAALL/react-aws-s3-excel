@@ -18,6 +18,7 @@ https://stackoverflow.com/questions/2937465/what-is-correct-content-type-for-exc
 https://stackoverflow.com/questions/4212861/what-is-a-correct-mime-type-for-docx-pptx-etc
 
 # s3 bucket policy gives the error "Policy has invalid resource"
+https://stackoverflow.com/questions/35189663/s3-invalid-resource-in-bucket-policy
 
 The "Policy has invalid resource" error message usually indicates that the S3 bucket resource specified in the policy is incorrect or does not exist.
 To resolve this issue, you can check and make sure that:
