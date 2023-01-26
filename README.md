@@ -28,3 +28,14 @@ The bucket name is spelled correctly in the policy. The bucket is in the same re
 Additionally, you can check the syntax of your policy, it should be in JSON format and should be well-formed JSON. To validate JSON you can use any JSON validator tools available.
 
 Please make sure that you have the correct permissions to create and modify S3 policies and also that you are using the correct ARN (Amazon Resource Name) of the S3 bucket in the policy.
+
+# Fatal: refusing to merge unrelated histories
+
+When you run the command git pull and you get the error message fatal: refusing to merge unrelated histories, it means that Git is preventing you from merging two branches that have completely different commit histories.
+
+This error occurs when you are trying to merge a branch that you created from scratch (e.g. a new branch that you created locally) with a branch that already exists on the remote repository, but the two branches have no commits in common.
+
+By default, Git is set up to only merge branches that have a common ancestor. This is to prevent accidental data loss when merging unrelated branches.
+
+You can still merge these branches by using the --allow-unrelated-histories option, you can do this by running the command:
+"git pull origin main --allow-unrelated-histories"
