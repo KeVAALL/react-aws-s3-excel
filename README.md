@@ -6,7 +6,7 @@ https://blog.devgenius.io/upload-files-to-amazon-s3-from-a-react-frontend-fbd8f0
 # How to Upload Files With React
 https://codefrontend.com/file-upload-reactjs/
 
-# Setup With Server
+# Setup With Server. For Reference: https://youtu.be/yGYeYJpRWPM
 --> Set Server with aws sdk
 --> Create Bucket
 --> Create policies according to requirements
