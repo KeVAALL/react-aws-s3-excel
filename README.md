@@ -6,6 +6,19 @@ https://blog.devgenius.io/upload-files-to-amazon-s3-from-a-react-frontend-fbd8f0
 # How to Upload Files With React
 https://codefrontend.com/file-upload-reactjs/
 
+# Setup With Server. For Reference: https://youtu.be/yGYeYJpRWPM
+--> Set Server with aws sdk
+--> Create Bucket
+--> Create policies according to requirements
+--> Create IAM User
+--> Assign Policy to the IAM User. For reference: https://youtu.be/Ro78zq62n7U
+--> Create Secret Access Key in Security Credentials
+--> Setup AWS IAM Credentials in the Server Side
+--> Get Signed URL setup by AWS SDK when a request is set
+--> Pass that Signed URL to the Client side
+--> Send a PUT request from the Client Side on the Signed URL
+--> The file has been uploaded to the AWS S3 Bucket!
+
 # UPLOAD FILES FROM REACT TO AWS S3 IN 6 MINUTES
 https://youtu.be/fXjU8jTjHB4
 
@@ -40,10 +53,4 @@ By default, Git is set up to only merge branches that have a common ancestor. Th
 You can still merge these branches by using the --allow-unrelated-histories option, you can do this by running the command:
 "git pull origin main --allow-unrelated-histories"
 
-# ReferenceError: Buffer is not defined
 
-npm i buffer
-Then import it at the top of your file like so:
-
-window.Buffer = window.Buffer || require("buffer").Buffer;
-source: https://github.com/Fausto95/aws-s3/issues/88#issuecomment-1000511145
