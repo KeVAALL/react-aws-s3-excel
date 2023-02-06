@@ -1,14 +1,17 @@
-const aws = require("aws-sdk");
+const AWS = require("aws-sdk");
+const dotenv = require("dotenv");
 const crypto = require("crypto");
 const { promisify } = require("util");
 const randomBytes = promisify(crypto.randomBytes);
 
-const region = process.env.REACT_APP_REGION;
-const bucketName = process.env.REACT_APP_BUCKET_NAME;
+dotenv.config();
+
+const region = "ap-northeast-1";
+const bucketName = "react-csv";
 const accessKeyId = process.env.REACT_APP_ACCESS_KEY;
 const secretAccessKey = process.env.REACT_APP_SECRET_KEY;
 
-const s3 = new aws.S3({
+const s3 = new AWS.S3({
   region,
   accessKeyId,
   secretAccessKey,

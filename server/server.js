@@ -1,12 +1,15 @@
 const express = require("express");
 const { generateUploadURL } = require("./s3");
 const app = express();
-const port = 3000;
+const cors = require("cors");
+const port = 4000;
 
+app.use(cors());
 app.use(express.json());
 
 app.get("/s3URL", async (req, res) => {
   const url = await generateUploadURL();
+  console.log(url);
   res.send({ url });
 });
 

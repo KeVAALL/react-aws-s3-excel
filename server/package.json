@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.1309.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "nodemon": "^2.0.20",
     "server": "^1.0.38"
   }
