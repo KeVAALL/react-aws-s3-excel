@@ -1,21 +1,8 @@
 import React, { useState } from "react";
-// import S3 from "react-aws-s3";
-import S3FileUpload from "react-s3/lib/ReactS3";
-
-window.Buffer = window.Buffer || require("buffer").Buffer;
-// a React functional component, used to create a simple upload input and button
 
 const Upload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
-
-  // the configuration information is fetched from the .env file
-  console.log(process.env.REACT_APP_BUCKET_NAME);
-  const config = {
-    bucketName: process.env.REACT_APP_BUCKET_NAME,
-    region: process.env.REACT_APP_REGION,
-    accessKeyId: process.env.REACT_APP_ACCESS_KEY,
-    secretAccessKey: process.env.REACT_APP_SECRET_KEY,
-  };
+  const [imageLink, setImageLink] = useState("");
 
   const handleFileInput = (e) => {
     console.log(e.target.files[0]);
@@ -23,19 +10,20 @@ const Upload = () => {
   };
 
   const uploadFile = async (file) => {
-    // const ReactS3Client = new S3(config);
-    // the name of the file uploaded is used to upload it to S3
-    // ReactS3Client.uploadFile(file, file.name)
-    //   .then((data) => console.log(data.location))
-    //   .catch((err) => console.error(err));
+    const res = await fetch("http://localhost:4000/s3URL");
+    const response = await res.json();
+    const { url } = response;
 
-    S3FileUpload.uploadFile(file, config)
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // post the image direclty to the s3 bucket
+    await fetch(url, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+      body: file,
+    });
+    const imageUrl = url.split("?")[0];
+    setImageLink(imageUrl);
   };
   return (
     <div>
@@ -43,6 +31,7 @@ const Upload = () => {
       <input type="file" onChange={handleFileInput} />
       <br></br>
       <button onClick={() => uploadFile(selectedFile)}> Upload to S3</button>
+      <img src={imageLink} alt="" />
     </div>
   );
 };
